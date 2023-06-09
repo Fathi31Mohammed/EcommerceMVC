@@ -199,6 +199,7 @@ try {
                             else{
                                     // echo"<center></center>";
                                     $message_erreur = "CHECK YOUR NAME OR PASSWORD";
+                                    header();
                                 }
                                 if(isset($message_erreur)) {
                                     echo '<p>'.$message_erreur.'</p>';
