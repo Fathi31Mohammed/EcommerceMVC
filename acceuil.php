@@ -1,3 +1,4 @@
+<?php @session_start();?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -301,11 +302,14 @@
                                     <li class="header_search"><a href="#"><i class="icon-magnifier icons"></i></a></li>
                                     <li class="account_link"><a href="#"><i class="icon-user icons"></i></a>
                                         <ul class="dropdown_account_link">
-                                            <li><a href="templates\back\identifiant.php">Espace Admine</a></li>
-                                            <li><a href="#">My Account</a></li>
-                                            <li><a href="#">Login</a></li>
-                                            <li><a href="templates\back\identifiantuser.php">S'inscrire</a></li>
-                                            <li><a href="#">Contact</a></li>
+                                            <?php if(!empty($_SESSION['username'])){ ?>
+                                                <li><a href="#"><?=$_SESSION['username']?></a></li>
+                                                <li><a href="index.php?action=Logout">Log Out</a></li>
+                                            <?php }
+                                                else { ?>
+                                                    <li><a href="templates\back\identifiant.php">Login</a></li>
+                                                    <li><a href="templates\back\identifiantuser.php">S'inscrire</a></li>
+                                            <?php }?>
                                         </ul>
                                     </li>
                                     <li><a href="#"><i class="icon-heart icons"></i></a> <span

@@ -16,12 +16,12 @@
 </head>
 <body class="hold-transition register-page">
 <div class="register-box">
-  <div class="register-logo">
+  <div class="register-logo" style="background-color:DarkTurquoise;">
     <a href="../../assets/back/index2.html"><b>Identifiez-Vous</b></a>
   </div>
 
   <div class="card">
-    <div class="card-body register-card-body">
+    <div class="card-body register-card-body" style="background-color:LightCyan;">
       <p class="login-box-msg">Enregistrer Un Nouveau Cliant</p>
       <form action="../../index.php?action=AddCliant" method="post">
       <!-- <form action="../../assets/back/index.html" method="post"> -->

@@ -75,7 +75,8 @@ class AddUser
         if (!$success) {
             throw new \Exception('Impossible d\'ajouter le user !');
         } else {
-            header('Location: index.php?action=acceuil');
+            // header('Location: index.php?action=acceuil');
+            header('location:templates\back\identifiant.php');
         }
     }
 }

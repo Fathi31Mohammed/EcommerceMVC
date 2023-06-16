@@ -56,7 +56,9 @@ try {
                     $input=array("name"=>"$name","prenom"=>"$prenom","email"=>"$email","username"=>"$username" ,"password"=>"$password" );
                     //print_r($input);
                      (new AddUser())->executecliant($input);
+                     
                 }
+                
 
             elseif ($_GET['action'] === 'updateUser') {
                 if(!empty($_GET['id'])){
@@ -89,10 +91,10 @@ try {
                 (new categorie())->execute();}
 
             elseif ($_GET['action'] === 'addcategorie') {
-                $id=$_POST['id'];
+                
                 $name=$_POST['name'];
                 $description = $_POST['description'];
-                $input=array("id"=>"$id","name"=>"$name","description"=>"$description");
+                $input=array("name"=>"$name","description"=>"$description");
                 // print_r($input);
                 (new AddCategories())->execute($input);
             }
@@ -186,44 +188,16 @@ try {
                         }
         // ---------------------<parametre De Produit>-----------------------------                     
    // ***************************************************************************************************
-
-        // ---------------------<parametre identification d'admin'>-----------------------------     
-                            
-                         elseif ($_GET['action'] === 'loginAdmin') {
-                                    $name=$_POST['name'];
-                                    $password=$_POST['password'];
-                            if(isset($name) && isset($password)){
-                                    (new User())-> login($name,$password); 
-                                }
-
-                            else{
-                                    // echo"<center></center>";
-                                    $message_erreur = "CHECK YOUR NAME OR PASSWORD";
-                                    header();
-                                }
-                                if(isset($message_erreur)) {
-                                    echo '<p>'.$message_erreur.'</p>';
-                                   }
+         // ---------------------<parametre identification '>-----------------------------  
+                            elseif ($_GET['action'] === 'Login') {
+                                (new User())-> login(); 
                             }
-         // ---------------------<parametre identification d'admin'>----------------------------- 
-         
-         // ---------------------<parametre identification simple user'>-----------------------------  
-    //                         elseif ($_GET['action'] === 'loginUser') {
-    //                             $name=$_POST['name'];
-    //                             $password=$_POST['password'];
-    //                             if(isset($name) && isset($password)){
-    //                             (new User())-> login($name,$password); 
-    //                                                                   }
+                            elseif ($_GET['action'] === 'Logout') {
+                                session_destroy();
+                                header('Location: index.php?action=acceuil');
+                            }
 
-    //                             else{
-    //                                  // echo"<center></center>";
-    //                                  $message_erreur = "CHECK YOUR NAME OR PASSWORD";
-    //                                 }
-    //                             if(isset($message_erreur)) {
-    //                             echo '<p>'.$message_erreur.'</p>';
-    //        }
-    // }
-         // ---------------------<parametre identification simple user'>-----------------------------   
+         // ---------------------<parametre identification '>-----------------------------   
     //  ***************************************************************************************************
     elseif ($_GET['action'] === 'acceuil') 
     {

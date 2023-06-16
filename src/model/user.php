@@ -122,11 +122,24 @@ class UserRepository
     }
 
     public function loginAD($name,$password){
-        $statement = $this->connection->getConnection()->prepare(
-            "SELECT * FROM users where name=? AND password=?"
-        );
-        $statement->execute(array($name,$password));
-        $control=$statement->fetch(\PDO::FETCH_OBJ);
-        return $control;
+        $statement = $this->connection->getConnection()->prepare("SELECT * FROM users WHERE name=? AND password=?");
+        $statement->execute([$name,$password]);
+
+        $row = $statement->fetch();
+        if ($row === false) {
+            header("Location: templates/back/identifiant.php?error=name is Incorrect OR Password is Incorrect");
+            exit();
+        }
+       
+          
+        $user = new User();
+        $user->id = $row['id'];
+		$user->name = $row['name'];
+        $user->prenom = $row['prenom'];
+		$user->username = $row['username'];
+		$user->email = $row['email'];
+        $user->password = $row['password'];
+		$user->role_id = $row['role_id'];
+        return $user;
     }
 }

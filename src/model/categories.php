@@ -57,12 +57,12 @@ class categorieRepository
         return $categorie;
     }
 
-    public function createcategories(int $id,string $name,string $description): bool
+    public function createcategories(string $name,string $description): bool
     {
         $statement = $this->connection->getConnection()->prepare(
-            'INSERT INTO categories ( id,name,description) VALUES(?,?,?)'
+            'INSERT INTO categories (name,description) VALUES(?,?)'
         );
-        $affectedLines = $statement->execute([$id,$name,$description]);
+        $affectedLines = $statement->execute([$name,$description]);
 
         return ($affectedLines > 0);
     }

@@ -12,14 +12,12 @@ class AddCategories
 {
     public function execute(array $input)
     {
-        $id= null;
+        
         $name = null;
        
-        if (!empty($input['id']) && 
-            !empty($input['name']) &&
+        if (!empty($input['name']) &&
             !empty($input['description'])  
 			) {
-                $id = $input['id'];
                 $name = $input['name'];
                 $description = $input['description'];
         } else {
@@ -28,7 +26,7 @@ class AddCategories
 
         $categorieRepository = new categorieRepository();
         $categorieRepository->connection = new DatabaseConnection();
-        $success = $categorieRepository->createcategories($id,$name,$description);
+        $success = $categorieRepository->createcategories($name,$description);
         if (!$success) {
             throw new \Exception('Impossible d\'ajouter le categorie !');
         } else {

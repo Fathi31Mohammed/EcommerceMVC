@@ -1,14 +1,15 @@
+<?php @session_start();?>
 <?php $title = "Ajouter un étulisateur"; ?>
 
 <?php ob_start(); ?>
-<h1>Ajouter un étulisateur</h1>
+<h1><br></h1>
 
 
 <form action="../../index.php?action=addUser" method="post">
 <section class="content">
       <div class="row">
         <div class="col-md-6"  style="margin-left:25%;">
-          <div class="card card-primary">
+          <div class="card card-primary" style="background-color:LightCyan;">
             <div class="card-header">
               <h3 class="card-title">Ajouter un étulisateur</h3>
 
@@ -59,7 +60,7 @@
         
       <div class="row">
         <div class="col-12">
-          <a href="#" class="btn btn-secondary">Anuller</a>
+          <a href="../../index.php?action=homepage" class="btn btn-secondary">Anuller</a>
           <input type="submit" name="submitADD" value="Ajouter un nouveau étulisateur" class="btn btn-success float-right">
         </div>
       </div>

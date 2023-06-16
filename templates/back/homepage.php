@@ -1,3 +1,4 @@
+<?php @session_start();?>
 <?php $title = "Tableau De Bord | Espaace Admin"; ?>
 
 <?php ob_start(); ?>
@@ -6,12 +7,12 @@
   <div class="container-fluid">
 	<div class="row mb-2">
 	  <div class="col-sm-6">
-		<h1 class="m-0">tableau de bord</h1>
+		<h1 class="m-0">Tableau De Bord</h1>
 	  </div><!-- /.col -->
 	  <div class="col-sm-6">
 		<ol class="breadcrumb float-sm-right">
 		  <li class="breadcrumb-item"><a href="#">Home</a></li>
-		  <li class="breadcrumb-item active">tableau de bord</li>
+		  <li class="breadcrumb-item active">Tableau De Bord</li>
 		</ol>
 	  </div><!-- /.col -->
 	</div><!-- /.row -->

@@ -1,19 +1,19 @@
 <?php 
 require_once('C:\xampp\htdocs\Nouveaudossier\ecommerce\src\controllers\produit\list.php');
 use Application\Controllers\produit\produit;
-$title = "Le blog de l'AVBN"; 
+$title = "Ajouter un Produit"; 
 
 ?>
 
 <?php ob_start(); ?>
-<h1>Ajouter un produit</h1>
+<h1><br></h1>
 
 
 <form action="../../index.php?action=Addproduit" method="post" enctype="multipart/form-data">
 <section class="content">
       <div class="row">
         <div class="col-md-6"  style="margin-left:25%;" >
-          <div class="card card-primary">
+          <div class="card card-primary" style="background-color:LightCyan;">
             <div class="card-header">
               <h3 class="card-title">Ajouter un produit</h3>
 
